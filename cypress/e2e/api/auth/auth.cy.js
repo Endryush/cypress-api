@@ -15,4 +15,18 @@ describe('Auth API Testing', () => {
       // expect(response.body).not.to.be.empty
     })
   })
+
+  it('POST - auth credentials success - 2nd', () => {
+    const body = {
+      username: 'admin',
+      password: 'password123'
+    }
+
+    cy.postRequest(Cypress.env('auth_url'), body)
+      .then((response) => {
+        // debugger
+        expect(response.status).to.equal(200)
+        expect(response.body).to.have.property('token').and.to.be.a('string')
+      })
+  })
 })
