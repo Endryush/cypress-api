@@ -1,0 +1,16 @@
+{
+  "name": "cypress-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "cy:open": "cypress open"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^13.13.1",
+    "cypress-plugin-api": "^2.11.2",
+    "eslint-plugin-cypress": "^3.4.0"
+  }
+}
