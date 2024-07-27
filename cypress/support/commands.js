@@ -37,3 +37,27 @@ Cypress.Commands.add('postRequest', (endpoint, body = {}, qs = {}, customHeaders
     failOnStatusCode: false
   }).then(response => response)
 })
+
+Cypress.Commands.add('customGetRequest', (endpoint, qs = {}) => {
+  cy.request({
+    method: 'GET',
+    url: endpoint,
+    headers: { 
+      'Content-Type': 'application/json',
+     },
+    qs
+  }).then(response => response)
+})
+
+Cypress.Commands.add('customPutRequest', (endpoint, body, customHeaders = {}) => {
+  cy.request({
+    method: 'PUT',
+    url: endpoint,
+    headers: { 
+      'Content-Type': 'application/json',
+      ...customHeaders
+     },
+     body,
+     failOnStatusCode: false
+  }).then(response => response)
+})
